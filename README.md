@@ -15,5 +15,5 @@ pip install -r requirements.txt
 ```
 
 See [example.ipynb](https://github.com/bwv1194/geometric-torus-variability/blob/main/example.ipynb) for usage.
-Or check [this link](https://nbviewer.org/github/bwv1194/geometric-torus-variability/blob/34704ac02b78f945e8e21415da2d6fc3b6ed8c5b/example.ipynb) to see 3D plot.
+Or check [this link](https://nbviewer.org/github/bwv1194/geometric-torus-variability/blob/34704ac02b78f945e8e21415da2d6fc3b6ed8c5b/example.ipynb) to see the 3D plot.
 
