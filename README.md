@@ -4,7 +4,7 @@
 
 This repository includes example codes used to generate geometric torus models, calculate the corresponding transfer functions, simulate mid-infrared light curves as the delayed and smoothed response to the driving optical light curves, and derive structure functions of the simulated light curves.
 
-<div align=center><img width=60% height=60% src="https://github.com/bwv1194/images/blob/main/torus.png"/></div>
+<div align=center><img width=60% height=60% src="https://github.com/bwv1194/geometric-torus-variability/blob/50e5088796afa41ef578c3671659dd90d4e99009/torus.png"/></div>
 
 
 ### Setup:
