@@ -1,0 +1,7 @@
+numpy
+matplotlib
+celerite
+astropy
+scipy
+ipywidgets
+plotly
