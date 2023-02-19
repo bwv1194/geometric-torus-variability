@@ -10,7 +10,8 @@ import scipy
 from scipy.interpolate import interp1d
 
 
-def simulate_transfer_func(incl, Rin, sigma, Y=1.5, p=-1.0, ncloud=1000000, dt=0.1, seed=1, return_data=True, return_plot=False):
+def simulate_transfer_func(incl, Rin, sigma, Y=1.5, p=-1.0, ncloud=1000000, dt=0.1, seed=1, 
+        return_data=True, return_cloud=False, show_plot=False):
     '''
     incl: inclination angle in degree; 0 means face on and 90 means edge on
 
@@ -78,12 +79,7 @@ def simulate_transfer_func(incl, Rin, sigma, Y=1.5, p=-1.0, ncloud=1000000, dt=0
     delay_phi = delay_phi[delay_t <= tmax]
     delay_t = delay_t[delay_t <= tmax]
 
-    if return_data:
-        if return_plot:
-            return delay_t, delay_phi, R_random, beta, phi, delay
-        else:
-            return delay_t, delay_phi
-    else:
+    if show_plot:
         plt.figure()
         plt.plot(delay_t, delay_phi)
         plt.xlabel(r'$\tau$ (days)')
@@ -91,6 +87,12 @@ def simulate_transfer_func(incl, Rin, sigma, Y=1.5, p=-1.0, ncloud=1000000, dt=0
         plt.xlim(0,)
         plt.ylim(0,)
         plt.show()
+    
+    if return_data:
+        if return_cloud:
+            return delay_t, delay_phi, R_random, beta, phi, delay
+        else:
+            return delay_t, delay_phi
 
 
 def simulate_drw_lc(t, tau, sigma, flux_mean, seed=1):
@@ -147,7 +149,7 @@ def simulate_perfect_light_curve(tau_g, sigma_g, flux_mean,
             
     # simulate transfer function
     delay_t, delay_phi = simulate_transfer_func(
-                            incl, Rin, sigma, Y, p, ncloud, dt, seed, return_data=True, return_plot=False)
+                            incl, Rin, sigma, Y, p, ncloud, dt, seed, return_data=True, return_cloud=False, show_plot=False)
     tmax = max(delay_t)
     
     # simulate optical light curve
